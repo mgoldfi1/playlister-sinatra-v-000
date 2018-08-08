@@ -16,6 +16,7 @@ class SongsController < ApplicationController
     song.artist = artist
     song.save
     redirect to("/songs/#{song.slug}")
+    binding.pry
   end
 
   get '/songs/:slug' do
