@@ -14,6 +14,7 @@ class SongsController < ApplicationController
     artist = Artist.create(name: params["song"]["artist"]["name"])
     song = Song.new(name: params[:song][:name])
     song.artist = artist
+    song.genres = params["genres"]
     song.save
     redirect to("/songs/#{song.slug}")
   end
