@@ -17,8 +17,8 @@ class SongsController < ApplicationController
     params["genres"].each do |id|
       song.genres << Genre.find_by_id(id)
     end
-
     song.save
+    "Successfully created song."
     redirect to("/songs/#{song.slug}")
   end
 
