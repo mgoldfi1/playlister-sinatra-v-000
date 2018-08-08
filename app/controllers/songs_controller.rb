@@ -1,5 +1,4 @@
 class SongsController < ApplicationController
-<<<<<<< HEAD
 
   get '/songs' do
     @songs = Song.all
@@ -21,6 +20,4 @@ class SongsController < ApplicationController
     erb :'/songs/show'
   end
 
-=======
->>>>>>> a6b2cdb8321f7d8dcfc85f363e16eec93fc805a7
 end
