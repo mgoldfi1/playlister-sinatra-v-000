@@ -1,5 +1,4 @@
 class GenresController < ApplicationController
-<<<<<<< HEAD
 
   get '/genres' do
     @genres = Genre.all
@@ -11,6 +10,5 @@ class GenresController < ApplicationController
     erb :'/genres/show'
   end
 
-=======
->>>>>>> a6b2cdb8321f7d8dcfc85f363e16eec93fc805a7
+
 end
