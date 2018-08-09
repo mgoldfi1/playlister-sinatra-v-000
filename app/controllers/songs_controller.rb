@@ -34,7 +34,6 @@ class SongsController < ApplicationController
 
   post '/songs/:slug' do
     # binding.pry
-    artist = Artist.find_or_create_by(name: params[:artist_name])
     song = Song.find_by_slug(params[:slug])
 
     genres = []
@@ -42,6 +41,7 @@ class SongsController < ApplicationController
       genres << Genre.find_by_id(id)
     end
     if !params[:artist_name].empty?
+    artist = Artist.find_or_create_by(name: params[:artist_name])
     song.artist = artist
   end
     song.genres = genres
