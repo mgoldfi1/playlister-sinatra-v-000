@@ -42,6 +42,7 @@ class SongsController < ApplicationController
     end
     song.update(artist: artist, genres: genres)
     song.save
+    redirect to("/songs/#{song.slug}")
   end
 
 
