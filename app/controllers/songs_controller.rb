@@ -38,7 +38,7 @@ class SongsController < ApplicationController
     song.update(artist: artist)
     genres = []
     params["genres"].each do |id|
-      song.genres << Genre.find_by_id(id)
+      genres << Genre.find_by_id(id)
     end
     song.save
   end
