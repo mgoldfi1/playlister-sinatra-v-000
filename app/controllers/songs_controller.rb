@@ -35,7 +35,7 @@ class SongsController < ApplicationController
   post '/songs/edit' do
     artist = Artist.find_or_create_by(name: params["song"]["artist"]["name"])
     song = Song.find_by(name: params[:song][:name])
-    song.artist = artist
+    song.update(artist: artist)
     params["genres"].each do |id|
       song.genres << Genre.find_by_id(id)
     end
