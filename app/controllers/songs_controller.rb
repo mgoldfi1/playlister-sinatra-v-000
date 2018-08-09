@@ -41,7 +41,9 @@ class SongsController < ApplicationController
     params["genres"].each do |id|
       genres << Genre.find_by_id(id)
     end
+    if !params[:artist_name].empty?
     song.artist = artist
+  end
     song.genres = genres
     binding.pry
     song.save
