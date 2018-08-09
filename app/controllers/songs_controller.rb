@@ -33,7 +33,7 @@ class SongsController < ApplicationController
     erb :'/songs/edit'
   end
 
-  post '/songs/edit' do
+  post '/songs/:slug/edit' do
     artist = Artist.find_or_create_by(name: params["song"]["artist"]["name"])
     song = Song.find_by(name: params[:song][:name])
 
