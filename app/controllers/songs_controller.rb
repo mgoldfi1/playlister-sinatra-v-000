@@ -36,6 +36,7 @@ class SongsController < ApplicationController
     artist = Artist.find_or_create_by(name: params["song"]["artist"]["name"])
     song = Song.find_by(name: params[:song][:name])
     song.update(artist: artist)
+    genres = []
     params["genres"].each do |id|
       song.genres << Genre.find_by_id(id)
     end
