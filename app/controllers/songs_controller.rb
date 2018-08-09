@@ -41,7 +41,7 @@ class SongsController < ApplicationController
       genres << Genre.find_by_id(id)
     end
     song.artist = artist
-    song.genres = genres 
+    song.genres = genres
     song.save
     redirect to("/songs/#{song.slug}")
   end
