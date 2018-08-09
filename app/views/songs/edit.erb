@@ -1,4 +1,4 @@
-<form method="post" action="/songs/<%=@song.name%>/edit">
+<form method="post" action="/songs/<%=@song.slug%>/edit">
   <!-- Name <input type="text" name="song[name]" id="Name"></input> -->
   Song: <%=@song.name%>
   <input type="text" name="song[artist][name]" id="Artist Name"></input>
