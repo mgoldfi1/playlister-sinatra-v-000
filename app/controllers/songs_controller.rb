@@ -37,14 +37,13 @@ class SongsController < ApplicationController
     song = Song.find_by_slug(params[:slug])
     artist = Artist.find_or_create_by(name: params[:artist_name])
     genres = []
-    params["genres"].each do |id|
-      genres << Genre.find_by_id(id)
-    end
+    # params["genres"].each do |id|
+    #   genres << Genre.find_by_id(id)
+    # end
     if !params[:artist_name].empty?
-  
     song.artist = artist
   end
-    song.genres = genres
+    # song.genres = genres
     song.save
     flash[:message] = "Successfully updated song."
     redirect to("/songs/#{song.slug}")
