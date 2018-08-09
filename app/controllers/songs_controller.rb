@@ -45,7 +45,6 @@ class SongsController < ApplicationController
     song.artist = artist
   end
     song.genres = genres
-    binding.pry
     song.save
     flash[:message] = "Successfully updated song."
     redirect to("/songs/#{song.slug}")
