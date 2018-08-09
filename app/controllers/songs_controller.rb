@@ -40,7 +40,8 @@ class SongsController < ApplicationController
     params["genres"].each do |id|
       genres << Genre.find_by_id(id)
     end
-    song.update(artist: artist, genres: genres)
+    song.artist = artist
+    song.genres = genres 
     song.save
     redirect to("/songs/#{song.slug}")
   end
